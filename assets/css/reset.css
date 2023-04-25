@@ -1,0 +1,58 @@
+@charset "UTF-8";
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, p, span, input, textarea, select, button, th, td, blockquote, h1, h2, h3, h4, h5, h6, figure {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	vertical-align:top;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-weight:400;
+}
+ul, ol, li {
+	list-style:none;
+}
+a {
+	color:inherit;
+	vertical-align:top;
+	text-decoration:none;
+	box-sizing:border-box;
+}
+img {
+	max-width:100%;
+	vertical-align:top;
+}
+.blind {
+	position:absolute;
+	overflow:hidden;
+	top:0;
+	left:0;
+	width:1px;
+	height:1px;
+	font-size:0;
+	line-height:0;
+	visibility:hidden;
+}
+button {
+	display:inline-block;
+	color:inherit;
+	border:0 none;
+	background:transparent;
+	font:inherit;
+	cursor:pointer;
+	outline:none;
+}
+input, select, textarea {
+	font:inherit;
+	border:0 none;
+	background:transparent;
+	outline:none;
+}
+.tac {
+	text-align:center !important;
+}
+.tar {
+	text-align:right !important;
+}
+.tal {
+	text-align:left !important;
+}
