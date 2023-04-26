@@ -90,6 +90,7 @@ body {color:#fff;background-color:#101111;font-family:'Spoqa Han Sans Neo',sans-
     line-height:80px;
     font-weight:700;
     opacity:0.1;
+    transition:opacity 0.8s ease-out;
 }
 .main-intro__slogan > li.active {
     opacity:1;  
@@ -112,6 +113,52 @@ body {color:#fff;background-color:#101111;font-family:'Spoqa Han Sans Neo',sans-
 }
 .main-business__list > li ~ li {
     margin-top:300px;
+}
+
+.overlay {
+    position:fixed;
+    top:50%;
+    left:0;
+    right:0;
+    transform:translate3d(0, -50%, 0);
+    text-align:center;
+    /* transition:all 0.4s ease-out; */
+}
+.overlay__inner {
+    transition:transform 0.4s ease-out;
+}
+.overlay__titles {
+    height:100px;
+    overflow:hidden;
+}
+.overlay__title {
+    opacity:0;
+    visibility:hidden;
+    font-size:100px;
+    font-weight:bold;
+    line-height:1;
+    background:-webkit-linear-gradient(90deg, #0060AF 0.15%, #008CFF 100.15%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+.overlay__title.active {
+    opacity:1;
+    visibility:visible;
+}
+.overlay__roles {
+    margin-top:30px;
+    height:60px;
+    overflow:hidden;
+}
+.overlay__role {
+    opacity:0;
+    visibility:hidden;
+    font-size:20px;
+    line-height:30px;
+}
+.overlay__role.active {
+    opacity:1;
+    visibility:visible;
 }
 
 .main-esg {

@@ -14,7 +14,7 @@
     <!-- <script src="./assets/library/locomotive-scroll/locomotive-scroll.min.js"></script> -->
     <script src="./assets/library/swiper/swiper-bundle.min.js"></script>
     <script src="./assets/script/common.js"></script>
-    <!-- <script src="./assets/script/main.js"></script> -->
+    <script src="./assets/script/main.js"></script>
 </head>
 <body>
     <div class="wrap">
@@ -47,12 +47,12 @@
                 </section>
                 <!-- section#02 -->
                 <section class="section main-business">
-                    <div class="main-intro">
+                    <div class="main-intro main-intro--business">
                         <div class="main-intro__inner">
                             <h2 class="main-intro__title">
                                 <img src="./assets/images/text01.png" alt="">
                             </h2>
-                            <ul class="main-intro__slogan">
+                            <ul class="main-intro__slogan" data-aos="focus">
                                 <li class="active">독창적인 기술력과 최고의 품질로</li>
                                 <li>고객 비즈니스의 혁신을 주도하는</li>
                                 <li>복합소재 전문기업, 한국카본</li>
@@ -73,35 +73,37 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="overlay">
-                            <div class="overlay__titles">
-                                <h3>Mobility</h3>
-                                <h3>Industrial</h3>
-                                <h3>Lifestyle</h3>
-                            </div>
-                            <div class="overlay__roles">
-                                <p>전기차 배터리 케이스와 자동차 내외장재 및 복합소재 부품 생산하여 <br> 
-                                    자동차 경량화에 효과적입니다
-                                </p>
-                                <p>광범위한 탄소소재 및 카본파이버 제품을 개발하여 <br> 
-                                    높은 기술력과 경쟁력을 갖추고 있습니다
-                                </p>
-                                <p>스포츠용품, 의료기기, 가전제품 등의 분야에서 <br>
-                                    탄소소재 및 카본파이버 제품을 활용한 경량화, 고강도화, 디자인 개선 등의 기술을 개발하고 있습니다
-                                </p>
-                            </div>
-                            <div class="overlay__buttons">
-                                <div class="buttons">
-
+                        <!-- <div class="overlay">
+                            <div class="overlay__inner">
+                                <div class="overlay__titles">
+                                    <h3 class="overlay__title active">Mobility</h3>
+                                    <h3 class="overlay__title">Industrial</h3>
+                                    <h3 class="overlay__title">Lifestyle</h3>
                                 </div>
-                                <div class="buttons">
-
+                                <div class="overlay__roles">
+                                    <p class="overlay__role active">전기차 배터리 케이스와 자동차 내외장재 및 복합소재 부품 생산하여 <br> 
+                                        자동차 경량화에 효과적입니다
+                                    </p>
+                                    <p class="overlay__role">광범위한 탄소소재 및 카본파이버 제품을 개발하여 <br> 
+                                        높은 기술력과 경쟁력을 갖추고 있습니다
+                                    </p>
+                                    <p class="overlay__role">스포츠용품, 의료기기, 가전제품 등의 분야에서 <br>
+                                        탄소소재 및 카본파이버 제품을 활용한 경량화, 고강도화, 디자인 개선 등의 기술을 개발하고 있습니다
+                                    </p>
                                 </div>
-                                <div class="buttons">
+                                <div class="overlay__buttons">
+                                    <div class="buttons">
 
+                                    </div>
+                                    <div class="buttons">
+
+                                    </div>
+                                    <div class="buttons">
+
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </section>
                 <!-- section#03 -->
@@ -112,12 +114,12 @@
                 </section>
                 <!-- section#04 -->
                 <section class="section main-company">
-                    <div class="main-intro">
+                    <div class="main-intro main-intro--company">
                         <div class="main-intro__inner">
                             <h2 class="main-intro__title">
                                 <img src="./assets/images/text02.png" alt="">
                             </h2>
-                            <ul class="main-intro__slogan">
+                            <ul class="main-intro__slogan" data-aos="focus">
                                 <li class="active">독창적인 기술개발과 품질향상으로</li>
                                 <li>적극적인 국내 및 해외시장 개척을 통해</li>
                                 <li>복합소재 사업의 글로벌 리더가 되겠습니다</li>
@@ -176,7 +178,7 @@
                             <h2 class="main-intro__title">
                                 <img src="./assets/images/text07.png" alt="">
                             </h2>
-                            <ul class="main-intro__slogan">
+                            <ul class="main-intro__slogan" data-aos="focus">
                                 <li class="active">한계를 뛰어넘는 도전으로</li>
                                 <li>새로운 기술과 가치를 창조합니다</li>
                             </ul>
@@ -244,7 +246,7 @@
                             <h2 class="main-intro__title">
                                 <img src="./assets/images/text08.png" alt="">
                             </h2>
-                            <ul class="main-intro__slogan">
+                            <ul class="main-intro__slogan" data-aos="focus">
                                 <li class="active">꿈과 열정으로 소재를 창조하는</li>
                                 <li>인재를 기다립니다</li>
                             </ul>
@@ -275,11 +277,52 @@
     </div>
     <script>
         $(function() {
+            AOS.init({
+                duration: 800,
+            });
+            // kvSwiper
             const kvSwiper = new Swiper('.main-visual__bg', {
                 pagination: {
                     el: '.main-visual__indicator',
                 },
             })
+
+            // Business overlay
+            var wh = $(window).innerHeight(),
+                $business = $('.main-business'), 
+                $overlayInner = $('.overlay__inner'),
+                businessTop = $business.offset().top,
+                kvHeight = $('.main-visual')[0].clientHeight, 
+                businessIntroHeight = $('.main-business .main-intro')[0].clientHeight,
+                esgTop = $('.main-esg').offset().top;
+
+            $overlayInner.css('transform','translate3d(0px, ' + (kvHeight+businessIntroHeight - wh/2) + 'px, 0px)');
+
+            function scrolling() {
+                $(window).scroll(function() {
+                    var scTop = $(this).scrollTop(),
+                        $business = $('.main-business'),
+                        businessTop = $business.offset().top,
+                        $overlay = $('.overlay');
+
+                    $overlayInner.css('transform','translate3d(0px, ' + ((kvHeight+businessIntroHeight - wh/2) - scTop) + 'px, 0px)');
+
+                    if ((kvHeight+businessIntroHeight - wh/2) - scTop <= 0) {
+                        $overlayInner.css('transform','translate3d(0px, ' + 0 + 'px, 0px)');
+                    } else {
+                        // $business.removeClass('active');
+                        // $overlay.removeClass('active');
+                    }
+
+                    if (scTop >= esgTop) {
+                        console.log(-(scTop - esgTop));
+
+                    }
+                });
+            }
+
+            // $(window).on('load', scrolling);
+
         })
     </script>
 </body>
