@@ -55,9 +55,6 @@ $(function() {
                     case 3:
                         // intro__slogan
                         var $introSlogan = $('.main-intro--company .main-intro__slogan');
-                        // console.log(scTop + $(window).height());
-
-                        // console.log($('.main-intro--company')[0].offsetHeight + $('.main-intro--company')[0].offsetTop - 300)
 
                         if (scTop + $(window).height() > $('.main-intro--company')[0].offsetHeight + $('.main-intro--company')[0].offsetTop - 300) {
                             var introAccHeight = sectionsObj[i].accContentsHeight - (sectionsObj[i].contentsHeight - $('.main-intro--company')[0].offsetHeight)

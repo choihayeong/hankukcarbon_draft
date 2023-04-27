@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0;padding: 0;border: 0}
+        body {background:#101111;}
+
+        .wrap {overflow:hidden}
+        .box {
+            position: absolute;
+            right:0;
+            /* margin: 10px 5px; */
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            background: #00FFA8;
+            border-top: 3px dotted #00FFA8;
+            border-right: 1.5px dotted #00FFA8;
+            border-bottom: 3px dotted #00FFA8;
+            border-left: 15px dotted #00FFA8;
+            -webkit-animation: spin 3s linear infinite;
+            -webkit-filter: blur(5px);
+            animation: spin 3s linear infinite;
+            filter: blur(150px);
+            opacity:0.15;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                border-top: 3px dotted #00FFA8;
+                border-right: 1.5px dotted #00FFA8;
+                border-bottom: 3px dotted #00FFA8;
+                border-left: 15px dotted #00FFA8;
+                /* -webkit-filter: blur(5px); */
+                -webkit-transform: scale(1) rotateZ(0deg);
+            }
+            25% {
+                border-top-left-radius: 48%;
+                border-top-right-radius: 45%;
+                border-bottom-left-radius: 45%;
+                border-bottom-right-radius: 48%;
+                -webkit-transform: scale(0.95);
+                /* -webkit-filter: blur(6px); */
+            }
+            50% {
+                border-top: 1.5px dotted #00FFA8;
+                border-right: 15px dotted #00FFA8;
+                border-bottom: 1.5px dotted #00FFA8;
+                border-left: 1.5px dotted #00FFA8;
+                border-top-left-radius: 45%;
+                border-top-right-radius: 48%;
+                border-bottom-left-radius: 48%;
+                border-bottom-right-radius: 45%;
+                -webkit-transform: scale(2);
+                /* -webkit-filter: blur(7px); */
+            }
+            100% {
+                border-top: 3px dotted #00FFA8;
+                border-right: 1.5px dotted #00FFA8;
+                border-bottom: 3px dotted #00FFA8;
+                border-left: 15px dotted #00FFA8;
+                /* -webkit-filter: blur(5px); */
+                -webkit-transform: scale(1.5) rotateZ(180deg);
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class='box spin'></div>
+    </div>
+
+    <script>
+        var base_w = window.innerWidth / 2;
+        var base_h = window.innerWidth / 2;
+
+        var w = $(".box").width();
+        var h = $(".box").height();
+
+        $(".box").css("top",20);
+        $(".box").css("left",base_h - h/2);
+    </script>
+</body>
+</html>

@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link rel="stylesheet" href="./assets/library/aos/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <!-- <link rel="stylesheet" href="./assets/library/locomotive-scroll/locomotive-scroll.min.css"> -->
     <link rel="stylesheet" href="./assets/library/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="./assets/library/jquery/jquery-3.6.3.min.js"></script>
-    <script src="./assets/library/aos/aos.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <!-- <script src="./assets/library/locomotive-scroll/locomotive-scroll.min.js"></script> -->
     <script src="./assets/library/swiper/swiper-bundle.min.js"></script>
     <script src="./assets/script/common.js"></script>
-    <script src="./assets/script/main.js"></script>
+    <!-- <script src="./assets/script/main.js"></script> -->
 </head>
 <body>
     <div class="wrap">
@@ -36,10 +36,14 @@
                                 </div>
                             </div>
                             <div class="main-visual__item swiper-slide" style="background-image:url(./assets/images/img01.jpg)">
-                                <img src="./assets/images/kv-text.png" alt="">
+                                <div class="main-visual__contents">
+                                    <img src="./assets/images/kv-text.png" alt="">
+                                </div>
                             </div>
                             <div class="main-visual__item swiper-slide" style="background-image:url(./assets/images/img01.jpg)">
-                                <img src="./assets/images/kv-text.png" alt="">
+                                <div class="main-visual__contents">
+                                    <img src="./assets/images/kv-text.png" alt="">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -47,15 +51,18 @@
                 </section>
                 <!-- section#02 -->
                 <section class="section main-business">
+                    <div class="circle circle--01"></div>
+                    <div class="circle circle--02"></div>
+                    <div class="circle circle--03"></div>
                     <div class="main-intro main-intro--business">
                         <div class="main-intro__inner">
                             <h2 class="main-intro__title">
                                 <img src="./assets/images/text01.png" alt="">
                             </h2>
-                            <ul class="main-intro__slogan" data-aos="focus">
-                                <li class="active">독창적인 기술력과 최고의 품질로</li>
-                                <li>고객 비즈니스의 혁신을 주도하는</li>
-                                <li>복합소재 전문기업, 한국카본</li>
+                            <ul class="main-intro__slogan">
+                                <li class="active" data-aos="focus" data-aos-offset="200">독창적인 기술력과 최고의 품질로</li>
+                                <li data-aos="focus" data-aos-offset="400">고객 비즈니스의 혁신을 주도하는</li>
+                                <li data-aos="focus" data-aos-offset="600">복합소재 전문기업, 한국카본</li>
                             </ul>
                         </div>
                     </div>
@@ -114,15 +121,17 @@
                 </section>
                 <!-- section#04 -->
                 <section class="section main-company">
+                    <div class="circle circle--04"></div>
+                    <div class="circle circle--05"></div>
                     <div class="main-intro main-intro--company">
                         <div class="main-intro__inner">
                             <h2 class="main-intro__title">
                                 <img src="./assets/images/text02.png" alt="">
                             </h2>
-                            <ul class="main-intro__slogan" data-aos="focus">
-                                <li class="active">독창적인 기술개발과 품질향상으로</li>
-                                <li>적극적인 국내 및 해외시장 개척을 통해</li>
-                                <li>복합소재 사업의 글로벌 리더가 되겠습니다</li>
+                            <ul class="main-intro__slogan">
+                                <li class="active" data-aos="focus" data-aos-offset="200">독창적인 기술개발과 품질향상으로</li>
+                                <li data-aos="focus" data-aos-offset="400">적극적인 국내 및 해외시장 개척을 통해</li>
+                                <li data-aos="focus" data-aos-offset="600">복합소재 사업의 글로벌 리더가 되겠습니다</li>
                             </ul>
                         </div>
                     </div>
@@ -130,8 +139,8 @@
                         <ul class="main-company__list">
                             <li>
                                 <div class="main-company__counter">
-                                    <div class="main-company__number">
-                                        <strong>39</strong>
+                                    <div class="main-company__number" data-aos="split">
+                                        <strong class="char">39</strong>
                                     </div>
                                     <div class="main-company__contents">
                                         <img src="./assets/images/text03.png" alt="">
@@ -140,8 +149,8 @@
                             </li>
                             <li>
                                 <div class="main-company__counter">
-                                    <div class="main-company__number">
-                                        <strong>4,700</strong>
+                                    <div class="main-company__number" data-aos="split">
+                                        <strong class="char">4,700</strong>
                                     </div>
                                     <div class="main-company__contents">
                                         <img src="./assets/images/text04.png" alt="">
@@ -150,8 +159,8 @@
                             </li>
                             <li>
                                 <div class="main-company__counter">
-                                    <div class="main-company__number">
-                                        <strong>1</strong>
+                                    <div class="main-company__number" data-aos="split">
+                                        <strong class="char">1</strong>
                                     </div>
                                     <div class="main-company__contents">
                                         <img src="./assets/images/text05.png" alt="">
@@ -160,8 +169,8 @@
                             </li>
                             <li>
                                 <div class="main-company__counter">
-                                    <div class="main-company__number">
-                                        <strong>75</strong>
+                                    <div class="main-company__number" data-aos="split">
+                                        <strong class="char">75</strong>
                                     </div>
                                     <div class="main-company__contents">
                                         <img src="./assets/images/text06.png" alt="">
@@ -173,14 +182,15 @@
                 </section>
                 <!-- section#05 -->
                 <section class="section main-rnd">
+                    <div class="circle circle--06"></div>
                     <div class="main-intro">
                         <div class="main-intro__inner">
                             <h2 class="main-intro__title">
                                 <img src="./assets/images/text07.png" alt="">
                             </h2>
-                            <ul class="main-intro__slogan" data-aos="focus">
-                                <li class="active">한계를 뛰어넘는 도전으로</li>
-                                <li>새로운 기술과 가치를 창조합니다</li>
+                            <ul class="main-intro__slogan">
+                                <li class="active" data-aos="focus" data-aos-offset="200">한계를 뛰어넘는 도전으로</li>
+                                <li data-aos="focus" data-aos-offset="400">새로운 기술과 가치를 창조합니다</li>
                             </ul>
                         </div>
                     </div>
@@ -241,14 +251,15 @@
                 </section>
                 <!-- section#06 -->
                 <section class="section main-recruit">
+                    <div class="circle circle--07"></div>
                     <div class="main-intro">
                         <div class="main-intro__inner">
                             <h2 class="main-intro__title">
                                 <img src="./assets/images/text08.png" alt="">
                             </h2>
-                            <ul class="main-intro__slogan" data-aos="focus">
-                                <li class="active">꿈과 열정으로 소재를 창조하는</li>
-                                <li>인재를 기다립니다</li>
+                            <ul class="main-intro__slogan">
+                                <li class="active" data-aos="focus" data-aos-offset="200">꿈과 열정으로 소재를 창조하는</li>
+                                <li data-aos="focus" data-aos-offset="400">인재를 기다립니다</li>
                             </ul>
                         </div>
                     </div>
@@ -263,12 +274,14 @@
                 </section>
             </div>
         </main>
+        <!-- banner -->
         <aside class="banner">
             <img src="./assets/images/aerospace.jpg" alt="">
             <span class="banner__object">
                 <img src="./assets/images/object.png" alt="">
             </span>
         </aside>
+        <!-- // -->
         <!-- footer -->
         <footer id="footer" class="footer">
             <img src="./assets/images/footer.jpg" alt="">
@@ -282,10 +295,72 @@
             });
             // kvSwiper
             const kvSwiper = new Swiper('.main-visual__bg', {
+                effect:'fade',
+                loop:true,
                 pagination: {
                     el: '.main-visual__indicator',
                 },
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false
+                },
+                on : {},
             })
+            kvSwiper.autoplay.stop();
+
+            setTimeout(function() {
+                kvSwiper.autoplay.start();
+            }, 100)
+
+            // section activating
+            const $sections = $('.section');
+            $sections.eq(0).addClass('active').siblings().removeClass('active'); // initial
+
+            $(window).scroll(function() {
+                let scTop = $(this).scrollTop(),
+                    sectionsTop = [], currentSection = 0;
+
+                $sections.each((index, ele) => {
+                    sectionsTop.push(ele.offsetTop);
+                })
+
+                for (let i = 0; i < sectionsTop.length; i++) {
+                    if (scTop >= sectionsTop[i] - 170 && scTop < sectionsTop[i+1] - 170) {
+                        $sections.eq(i).addClass('active').siblings().removeClass('active');
+                        currentSection = i;
+                    }
+                    if (scTop >= sectionsTop[sectionsTop.length - 1] - 170) {
+                        $sections.eq(sectionsTop.length - 1).addClass('active').siblings().removeClass('active');
+                        currentSection = i;
+                    }
+                }
+                // section slogan effect (mixed with AOS)
+                $('[data-aos="focus"].aos-animate').each((index, item) => {
+                    let current = $('[data-aos="focus"].aos-animate').length;
+
+                    if (index === current - 1) {
+                        let currentFocus = $($('[data-aos="focus"].aos-animate')[index]);
+
+                        currentFocus.addClass('active').siblings().removeClass('active');
+                    }
+                })
+            })
+
+            // split text (counter)
+            for (var i = 0; i < $('.main-company__number strong').length; i++) {
+                let numberText = $('.main-company__number strong').eq(i).text();
+                numberText = numberText.split('').map((item, index) => {
+                    item = `<span class="char__inner">
+                        <span class="char__box">${item}</span>
+                    </span>`;
+
+                    return item;
+                });
+                $('.main-company__number strong').eq(i).html(numberText);
+            }
+
+
+
 
             // Business overlay
             var wh = $(window).innerHeight(),
@@ -316,7 +391,6 @@
 
                     if (scTop >= esgTop) {
                         console.log(-(scTop - esgTop));
-
                     }
                 });
             }
