@@ -1,4 +1,8 @@
 $(function() {
+    // AOS
+    AOS.init({
+        duration: 800,
+    });
     // header
     $('.gnb').on('mouseenter', function() {
         $('#header').addClass('hover');
@@ -27,5 +31,10 @@ $(function() {
     $('.gnb__right > li, .lnb__right > ul').on('mouseleave', function() {
         $('.gnb__right > li').removeClass('active');
         $('.lnb__right > ul').removeClass('active');
+    })
+    $('.snb .lnb__link').on('click', function(e) {
+        e.preventDefault();
+        $(this).toggleClass('active');
+        $(this).siblings('.snb__list').slideToggle();
     })
 })

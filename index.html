@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +14,7 @@
     <!-- <script src="./assets/library/locomotive-scroll/locomotive-scroll.min.js"></script> -->
     <script src="./assets/library/swiper/swiper-bundle.min.js"></script>
     <script src="./assets/script/common.js"></script>
-    <!-- <script src="./assets/script/main.js"></script> -->
+    <script src="./assets/script/main.js"></script>
 </head>
 <body>
     <div class="wrap">
@@ -22,7 +22,7 @@
         <header id="header" class="header">
             <div class="header__wrap">
                 <div class="header__top">
-                    <img src="./assets/images/header-top.png" alt="">
+                    <img src="./assets/images/header_top-menu.png" alt="">
                 </div>
                 <div class="header__inner">
                     <ul class="gnb gnb__left">
@@ -55,16 +55,41 @@
                     <div class="lnb lnb__left">
                         <ul class="lnb__item">
                             <li>
-                                <a href="#">개요</a>
+                                <a href="#" class="lnb__link">개요</a>
                             </li>
-                            <li style="font-family:'Roboto'">
-                                <a href="#">Mobility</a>
+                            <li class="snb" style="font-family:'Roboto';font-weight:500;">
+                                <a href="#" class="lnb__link">Mobility</a>
+                                <ul class="snb__list">
+                                    <li>
+                                        <a href="" class="snb__link">Transportation</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="snb__link">Energy</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="snb__link">Ship</a>
+                                    </li>
+                                </ul>
                             </li>
-                            <li style="font-family:'Roboto'">
-                                <a href="#">Industrial</a>
+                            <li class="snb" style="font-family:'Roboto';font-weight:500;">
+                                <a href="#" class="lnb__link">Industrial</a>
+                                <ul class="snb__list">
+                                    <li>
+                                        <a href="" class="snb__link">Aerospace</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="snb__link">Construction(BD)</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="snb__link">Infra</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="snb__link">Semiconductor</a>
+                                    </li>
+                                </ul>
                             </li>
-                            <li style="font-family:'Roboto'">
-                                <a href="#">Lifestyle</a>
+                            <li class="snb" style="font-family:'Roboto';font-weight:500;">
+                                <a href="#" class="lnb__link">Lifestyle</a>
                             </li>
                         </ul>
                         <ul class="lnb__item">
@@ -116,30 +141,30 @@
                             <li>
                                 <a href="./sub01.html">비즈니스 네트워크</a>
                             </li>
-                            <li>
-                                <a href="#">투자정보</a>
+                            <li class="snb">
+                                <a href="#" class="lnb__link">투자정보</a>
                             </li>
-                            <li>
-                                <a href="#">연혁&수상</a>
+                            <li class="snb">
+                                <a href="#" class="lnb__link">연혁&수상</a>
                             </li>
-                            <li>
-                                <a href="#">홍보센터</a>
+                            <li class="snb">
+                                <a href="#" class="lnb__link">홍보센터</a>
                             </li>
                         </ul>
                         <ul class="lnb__item">
                             <li>
                                 <a href="#">지속가능경영체계</a>
                             </li>
-                            <li>
-                                <a href="#">ESG</a>
+                            <li class="snb">
+                                <a href="#" class="lnb__link">ESG</a>
                             </li>
                         </ul>
                         <ul class="lnb__item">
                             <li>
-                                <a href="./sub02.html">인재상</a>
+                                <a href="#">인재상</a>
                             </li>
                             <li>
-                                <a href="#">직무소개</a>
+                                <a href="./sub02.html">직무소개</a>
                             </li>
                             <li>
                                 <a href="#">인사제도</a>
@@ -157,7 +182,6 @@
         </header>
         <!-- // -->
         <main id="main" class="main" data-scroll-container>
-            <!-- // -->
             <div class="main__wrap">
                 <!-- section#01 -->
                 <section class="section main-visual">
@@ -203,20 +227,22 @@
                         </div>
                     </div>
                     <div class="main-business__contents">
-                        <div class="row">
-                            <ul class="main-business__list">
-                                <li>
-                                    <img src="./assets/images/img02.jpg" alt="">
-                                </li>
-                                <li>
-                                    <img src="./assets/images/img03.jpg" alt="">
-                                </li>
-                                <li>
-                                    <img src="./assets/images/img04.jpg" alt="">
-                                </li>
-                            </ul>
+                        <div class="main-business__thumbnail">
+                            <div class="row">
+                                <ul class="main-business__list">
+                                    <li>
+                                        <img src="./assets/images/img02.jpg" alt="">
+                                    </li>
+                                    <li>
+                                        <img src="./assets/images/img03.jpg" alt="">
+                                    </li>
+                                    <li>
+                                        <img src="./assets/images/img04.jpg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <!-- <div class="overlay">
+                        <div class="overlay">
                             <div class="overlay__inner">
                                 <div class="overlay__titles">
                                     <h3 class="overlay__title active">Mobility</h3>
@@ -235,25 +261,50 @@
                                     </p>
                                 </div>
                                 <div class="overlay__buttons">
-                                    <div class="buttons">
-
+                                    <div class="buttons active">
+                                        <button type="button" class="btn">
+                                            <span>Transportation</span>
+                                        </button>
+                                        <button type="button" class="btn">
+                                            <span>Energy</span>
+                                        </button>
+                                        <button type="button" class="btn">
+                                            <span>Ship</span>
+                                        </button>
                                     </div>
                                     <div class="buttons">
-
+                                        <button type="button" class="btn">
+                                            <span>Aerospace</span>
+                                        </button>
+                                        <button type="button" class="btn">
+                                            <span>Construction(BD)</span>
+                                        </button>
+                                        <button type="button" class="btn">
+                                            <span>Infra</span>
+                                        </button>
+                                        <button type="button" class="btn">
+                                            <span>Semiconductor</span>
+                                        </button>
                                     </div>
                                     <div class="buttons">
-
+                                        <button type="button" class="btn">
+                                            <span>Sports & Leisure</span>
+                                        </button>
+                                        <button type="button" class="btn">
+                                            <span>Consumer Electronics</span>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </section>
                 <!-- section#03 -->
                 <section class="section main-esg">
-                    <div class="main-esg__contents">
+                    <div class="main-esg__contents" data-aos="fade-up">
                         <img src="./assets/images/esg-text.png" alt="">
                     </div>
+                    <button type="button" class="btn-more">See more</button>
                 </section>
                 <!-- section#04 -->
                 <section class="section main-company">
@@ -333,7 +384,7 @@
                     <div class="row">
                         <ul class="main-rnd__list">
                             <li>
-                                <div class="main-rnd__item" style="background-image:url(./assets/images/img06.jpg);">
+                                <div class="main-rnd__item" style="background-image:url(./assets/images/img06.jpg)">
                                     <div class="cell">
                                         <h3 class="main-rnd__title">
                                             <img src="./assets/images/text09.png" alt="">
@@ -343,14 +394,16 @@
                                                 <img src="./assets/images/text09_2.png" alt="">
                                             </div>
                                             <div class="main-rnd__button">
-                                                <img src="./assets/images/btn01.png" alt="">
+                                                <button type="button" class="btn btn--on">
+                                                    <span>R&D분야</span>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="main-rnd__item" style="background-image:url(./assets/images/img07.jpg);">
+                                <div class="main-rnd__item" style="background-image:url(./assets/images/img07.jpg)">
                                     <div class="cell">
                                         <h3 class="main-rnd__title">
                                             <img src="./assets/images/text10.png" alt="">
@@ -411,11 +464,16 @@
             </div>
         </main>
         <!-- banner -->
-        <aside class="banner">
-            <img src="./assets/images/aerospace.jpg" alt="">
+        <aside class="banner banner--main">
             <span class="banner__object">
                 <img src="./assets/images/object.png" alt="">
             </span>
+            <div class="banner__inner banner__inner--aero">
+                <div class="banner__contents" data-aos="fade-up">
+                    <img src="./assets/images/aero-text.png" alt="">
+                </div>
+                <button type="button" class="btn-more btn-more--dark">See more</button>
+            </div>
         </aside>
         <!-- // -->
         <!-- footer -->
@@ -424,122 +482,5 @@
         </footer>
         <!-- // -->
     </div>
-    <script>
-        $(function() {
-            AOS.init({
-                duration: 800,
-            });
-            // kvSwiper
-            const kvSwiper = new Swiper('.main-visual__bg', {
-                effect:'fade',
-                loop:true,
-                pagination: {
-                    el: '.main-visual__indicator',
-                },
-                autoplay: {
-                    delay: 5000,
-                    disableOnInteraction: false
-                },
-                on : {},
-            })
-            kvSwiper.autoplay.stop();
-
-            setTimeout(function() {
-                kvSwiper.autoplay.start();
-            }, 100)
-
-            // section activating
-            const $sections = $('.section');
-            $sections.eq(0).addClass('active').siblings().removeClass('active'); // initial
-
-            $(window).scroll(function() {
-                let scTop = $(this).scrollTop(),
-                    sectionsTop = [], currentSection = 0;
-
-                if (scTop > 100) {
-                    $('#header').addClass('on');
-                } else {
-                    $('#header').removeClass('on');
-                }
-
-                $sections.each((index, ele) => {
-                    sectionsTop.push(ele.offsetTop);
-                })
-
-                for (let i = 0; i < sectionsTop.length; i++) {
-                    if (scTop >= sectionsTop[i] - 170 && scTop < sectionsTop[i+1] - 170) {
-                        $sections.eq(i).addClass('active').siblings().removeClass('active');
-                        currentSection = i;
-                    }
-                    if (scTop >= sectionsTop[sectionsTop.length - 1] - 170) {
-                        $sections.eq(sectionsTop.length - 1).addClass('active').siblings().removeClass('active');
-                        currentSection = i;
-                    }
-                }
-                // section slogan effect (mixed with AOS)
-                $('[data-aos="focus"].aos-animate').each((index, item) => {
-                    let current = $('[data-aos="focus"].aos-animate').length;
-
-                    if (index === current - 1) {
-                        let currentFocus = $($('[data-aos="focus"].aos-animate')[index]);
-
-                        currentFocus.addClass('active').siblings().removeClass('active');
-                    }
-                })
-            })
-
-            // split text (counter)
-            for (var i = 0; i < $('.main-company__number strong').length; i++) {
-                let numberText = $('.main-company__number strong').eq(i).text();
-                numberText = numberText.split('').map((item, index) => {
-                    item = `<span class="char__inner">
-                        <span class="char__box">${item}</span>
-                    </span>`;
-
-                    return item;
-                });
-                $('.main-company__number strong').eq(i).html(numberText);
-            }
-
-
-
-
-            // Business overlay
-            var wh = $(window).innerHeight(),
-                $business = $('.main-business'), 
-                $overlayInner = $('.overlay__inner'),
-                businessTop = $business.offset().top,
-                kvHeight = $('.main-visual')[0].clientHeight, 
-                businessIntroHeight = $('.main-business .main-intro')[0].clientHeight,
-                esgTop = $('.main-esg').offset().top;
-
-            $overlayInner.css('transform','translate3d(0px, ' + (kvHeight+businessIntroHeight - wh/2) + 'px, 0px)');
-
-            function scrolling() {
-                $(window).scroll(function() {
-                    var scTop = $(this).scrollTop(),
-                        $business = $('.main-business'),
-                        businessTop = $business.offset().top,
-                        $overlay = $('.overlay');
-
-                    $overlayInner.css('transform','translate3d(0px, ' + ((kvHeight+businessIntroHeight - wh/2) - scTop) + 'px, 0px)');
-
-                    if ((kvHeight+businessIntroHeight - wh/2) - scTop <= 0) {
-                        $overlayInner.css('transform','translate3d(0px, ' + 0 + 'px, 0px)');
-                    } else {
-                        // $business.removeClass('active');
-                        // $overlay.removeClass('active');
-                    }
-
-                    if (scTop >= esgTop) {
-                        console.log(-(scTop - esgTop));
-                    }
-                });
-            }
-
-            // $(window).on('load', scrolling);
-
-        })
-    </script>
 </body>
 </html>

@@ -19,12 +19,12 @@ body {font-family:'Pretendard';font-size:0}
 .mo-content {overflow-y:scroll;overflow-x:hidden;position:absolute;top:107px;left:31px;width:375px;height:666px;background:#fff}
 .mobox {position:relative;font-size:16px;text-align:center;transition:background-color 0.4s ease}
 
-.boxs header {position:absolute;top:20px;left:20px;right:20px;z-index:10}
+/* .boxs header {position:absolute;top:20px;left:20px;right:20px;z-index:10}
 .section01 {position:relative;height:666px;background:url(../images/m/bg_kv.jpg) no-repeat center bottom}
 .section01__text {position:absolute;top:246px;left:0;right:0}
 .scroll {position:absolute;bottom:57px;left:50%;transform:translateX(-50%)}
 .section01__video {position:absolute;top:0;left:0;width:100%;height:100%}
-.section01__video video {position:absolute;top:50%;left:50%;height:100%;transform:translate(-50%, -50%)}
+.section01__video video {position:absolute;top:50%;left:50%;height:100%;transform:translate(-50%, -50%)} */
 
 /* @media screen and (min-aspect-ratio: 16/9) {
     video {width:100%;height:auto;object-fit:cover}

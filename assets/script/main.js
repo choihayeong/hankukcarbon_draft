@@ -1,110 +1,123 @@
 $(function() {
-    function setLayOut() {
-        var pageHeight = window.pageYOffset;
-        var clientHeight = window.innerHeight;
-        var sections = document.querySelectorAll('section');
-        var sectionObj = [];
+    // kvSwiper
+    const kvSwiper = new Swiper('.main-visual__bg', {
+        effect:'fade',
+        loop:true,
+        pagination: {
+            el: '.main-visual__indicator',
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false
+        },
+        on : {
+            slideChange: function () {
+                var activeIndex = this.activeIndex,
+                    realIndex = this.slides[activeIndex].getAttribute('data-swiper-slide-index');
+                $('.main-visual__indicator > span').removeClass("active");
+                $('.main-visual__indicator > span').eq(realIndex).addClass("active");
+            },
+            init: function() {
+                setTimeout(function() {
+                    $('.main-visual__indicator > span').eq(0).addClass('active');
+                }, 100)
+            }
+        },
+    })
+    kvSwiper.autoplay.stop();
 
-        sections.forEach((section, index) => {
-            sectionObj.push({
-                section: section,
-                offsetTop: section.offsetTop,
-                contentsHeight: section.offsetHeight,
-                accContentsHeight: (section.offsetTop + section.offsetHeight),
-                clientOffsetTop: section.offsetTop - clientHeight,
-                clientContentsHeight: (section.offsetTop - clientHeight),
-                clientAccContentsHeight: (section.offsetTop + section.offsetHeight) - clientHeight
-            });
-        });
+    setTimeout(function() {
+        kvSwiper.autoplay.start();
+    }, 100)
 
-        return sectionObj;
-    }
+    // section activating
+    const $sections = $('.section');
+    $sections.eq(0).addClass('active').siblings().removeClass('active'); // initial
 
-    function scrollLoop(sectionsObj) {
-        var scTop = $(window).scrollTop();
-        var scRatio;
+    $(window).scroll(function() {
+        let scTop = $(this).scrollTop(),
+            sectionsTop = [], currentSection = 0;
 
-        for (let i = 0; i < sectionsObj.length; i++) {
-            scRatio = (scTop - sectionsObj[i].clientOffsetTop) / sectionsObj[i].contentsHeight;
-            if (scTop >= sectionsObj[i].clientContentsHeight && scTop < sectionsObj[i].clientAccContentsHeight) {
-                switch (i) {
-                    case 0:
-                        break;
-                    case 1:
-                        // intro__slogan
-                        var $introSlogan = $('.main-intro--business .main-intro__slogan');
-                        if (scTop + $(window).height() > $('.main-intro--business')[0].offsetHeight + $('.main-intro--business')[0].offsetTop - 300) {
-                            var introAccHeight = sectionsObj[i].accContentsHeight - (sectionsObj[i].contentsHeight - $('.main-intro--business')[0].offsetHeight)
+        if (scTop > 100) {
+            $('#header').addClass('on');
+        } else {
+            $('#header').removeClass('on');
+        }
 
-                            if (scTop < introAccHeight) {
-                                var introScRatio = scTop / (introAccHeight - 300);
-                                if (introScRatio >= 0.4 && introScRatio < 0.45) {
-                                    $introSlogan.find('li').eq(0).addClass('active').siblings().removeClass('active');
-                                }
-                                if (introScRatio >= 0.45 && introScRatio < 0.5) {
-                                    $introSlogan.find('li').eq(1).addClass('active').siblings().removeClass('active');
-                                }
-                                if (introScRatio >= 0.5 && introScRatio < 0.55) {
-                                    $introSlogan.find('li').eq(2).addClass('active').siblings().removeClass('active');
-                                }
-                            }
-                        }
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        // intro__slogan
-                        var $introSlogan = $('.main-intro--company .main-intro__slogan');
+        $sections.each((index, ele) => {
+            sectionsTop.push(ele.offsetTop);
+        })
 
-                        if (scTop + $(window).height() > $('.main-intro--company')[0].offsetHeight + $('.main-intro--company')[0].offsetTop - 300) {
-                            var introAccHeight = sectionsObj[i].accContentsHeight - (sectionsObj[i].contentsHeight - $('.main-intro--company')[0].offsetHeight)
-
-                            console.log(scTop + $(window).height());
-                            console.log(introAccHeight);
-
-                            if (scTop < introAccHeight) {
-                                var introScRatio = scTop / (introAccHeight - 300);
-                                // console.log(introScRatio);
-                                if (introScRatio >= 0.4 && introScRatio < 0.45) {
-                                    console.log('a');
-                                    $introSlogan.find('li').eq(0).addClass('active').siblings().removeClass('active');
-                                }
-                                if (introScRatio >= 0.45 && introScRatio < 0.5) {
-                                    console.log('b');
-
-                                    $introSlogan.find('li').eq(1).addClass('active').siblings().removeClass('active');
-                                }
-                                if (introScRatio >= 0.5 && introScRatio < 0.55) {
-                                    console.log('c');
-
-                                    $introSlogan.find('li').eq(2).addClass('active').siblings().removeClass('active');
-                                }
-                            }
-                        }
-                        // console.log('company');
-                        break;
-                    case 4:
-                        console.log('rnd')
-                        break;
-                    case 5:
-                        console.log('recruit');
-                        break;
-                }
+        for (let i = 0; i < sectionsTop.length; i++) {
+            if (scTop >= sectionsTop[i] - 170 && scTop < sectionsTop[i+1] - 170) {
+                $sections.eq(i).addClass('active').siblings().removeClass('active');
+                currentSection = i;
+            }
+            if (scTop >= sectionsTop[sectionsTop.length - 1] - 170) {
+                $sections.eq(sectionsTop.length - 1).addClass('active').siblings().removeClass('active');
+                currentSection = i;
             }
         }
-    }
+        // section slogan effect (mixed with AOS)
+        $('[data-aos="focus"].aos-animate').each((index, item) => {
+            let current = $('[data-aos="focus"].aos-animate').length;
 
-    var sectionsObj;
+            if (index === current - 1) {
+                let currentFocus = $($('[data-aos="focus"].aos-animate')[index]);
 
-    $(window).on('load', function() {
-        sectionsObj = setLayOut();
-        console.log(sectionsObj);
-        scrollLoop(sectionsObj);
-        $(window).scroll(function() {
-            scrollLoop(sectionsObj);
+                currentFocus.addClass('active').siblings().removeClass('active');
+            }
+        })
+
+        var wh = $(window).innerHeight(), 
+            overlayTop = $('.main-business__contents').offset().top, 
+            $items = $('.main-business__list > li'), 
+            $overlayTitles = $('.overlay__title'),
+            $overlayRoles = $('.overlay__role'),
+            $overlayButtons = $('.overlay__buttons > .buttons'),
+            itemsTop = [];
+
+        $items.each((index, ele) => {
+            itemsTop.push(ele.offsetTop + overlayTop - wh);
+        })
+
+        for (var i = 0; i < itemsTop.length; i++) {
+            if (scTop >= itemsTop[i] && scTop < itemsTop[i+1]) {
+                $items.eq(i).addClass('active').siblings().removeClass('active');
+                $overlayTitles.eq(i).addClass('active').siblings().removeClass('active');
+                $overlayRoles.eq(i).addClass('active').siblings().removeClass('active');
+                $overlayButtons.eq(i).addClass('active').siblings().removeClass('active');
+            }
+            if (scTop >= itemsTop[itemsTop.length - 1]) {
+                $items.eq(itemsTop.length - 1).addClass('active').siblings().removeClass('active');
+                $overlayTitles.eq(itemsTop.length - 1).addClass('active').siblings().removeClass('active');
+                $overlayRoles.eq(itemsTop.length - 1).addClass('active').siblings().removeClass('active');
+                $overlayButtons.eq(itemsTop.length - 1).addClass('active').siblings().removeClass('active');
+            }
+        }
+    })
+
+    // split text (counter)
+    for (var i = 0; i < $('.main-company__number strong').length; i++) {
+        let numberText = $('.main-company__number strong').eq(i).text();
+        numberText = numberText.split('').map((item, index) => {
+            item = `<span class="char__inner">
+                <span class="char__box">${item}</span>
+            </span>`;
+
+            return item;
         });
-    });
-    $(window).on('resize',function() {
-        sectionsObj = setLayOut();
-    });
-});
+        $('.main-company__number strong').eq(i).html(numberText);
+    }
+    for (var i = 0; i < $('.overlay__title').length; i++) {
+        let titleText = $('.overlay__title').eq(i).text();
+        titleText = titleText.split('').map((item, index) => {
+            item = `<span class="char__inner">
+                <span class="char__box">${item}</span>
+            </span>`;
+
+            return item;
+        });
+        $('.overlay__title').eq(i).html(titleText);
+    }
+})

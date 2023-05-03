@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,7 +21,7 @@
     <header id="header" class="header on">
         <div class="header__wrap">
             <div class="header__top">
-                <img src="./assets/images/header-top.jpg" alt="">
+                <img src="./assets/images/header_top-menu.png" alt="">
             </div>
             <div class="header__inner">
                 <ul class="gnb gnb__left">
@@ -54,16 +54,41 @@
                 <div class="lnb lnb__left">
                     <ul class="lnb__item">
                         <li>
-                            <a href="#">개요</a>
+                            <a href="#" class="lnb__link">개요</a>
                         </li>
-                        <li style="font-family:'Roboto'">
-                            <a href="#">Mobility</a>
+                        <li class="snb" style="font-family:'Roboto';font-weight:500;">
+                            <a href="#" class="lnb__link">Mobility</a>
+                            <ul class="snb__list">
+                                <li>
+                                    <a href="" class="snb__link">Transportation</a>
+                                </li>
+                                <li>
+                                    <a href="" class="snb__link">Energy</a>
+                                </li>
+                                <li>
+                                    <a href="" class="snb__link">Ship</a>
+                                </li>
+                            </ul>
                         </li>
-                        <li style="font-family:'Roboto'">
-                            <a href="#">Industrial</a>
+                        <li class="snb" style="font-family:'Roboto';font-weight:500;">
+                            <a href="#" class="lnb__link">Industrial</a>
+                            <ul class="snb__list">
+                                <li>
+                                    <a href="" class="snb__link">Aerospace</a>
+                                </li>
+                                <li>
+                                    <a href="" class="snb__link">Construction(BD)</a>
+                                </li>
+                                <li>
+                                    <a href="" class="snb__link">Infra</a>
+                                </li>
+                                <li>
+                                    <a href="" class="snb__link">Semiconductor</a>
+                                </li>
+                            </ul>
                         </li>
-                        <li style="font-family:'Roboto'">
-                            <a href="#">Lifestyle</a>
+                        <li class="snb" style="font-family:'Roboto';font-weight:500;">
+                            <a href="#" class="lnb__link">Lifestyle</a>
                         </li>
                     </ul>
                     <ul class="lnb__item">
@@ -115,30 +140,30 @@
                         <li>
                             <a href="./sub01.html">비즈니스 네트워크</a>
                         </li>
-                        <li>
-                            <a href="#">투자정보</a>
+                        <li class="snb">
+                            <a href="#" class="lnb__link">투자정보</a>
                         </li>
-                        <li>
-                            <a href="#">연혁&수상</a>
+                        <li class="snb">
+                            <a href="#" class="lnb__link">연혁&수상</a>
                         </li>
-                        <li>
-                            <a href="#">홍보센터</a>
+                        <li class="snb">
+                            <a href="#" class="lnb__link">홍보센터</a>
                         </li>
                     </ul>
                     <ul class="lnb__item">
                         <li>
                             <a href="#">지속가능경영체계</a>
                         </li>
-                        <li>
-                            <a href="#">ESG</a>
+                        <li class="snb">
+                            <a href="#" class="lnb__link">ESG</a>
                         </li>
                     </ul>
                     <ul class="lnb__item">
                         <li>
-                            <a href="./sub02.html">인재상</a>
+                            <a href="#">인재상</a>
                         </li>
                         <li>
-                            <a href="#">직무소개</a>
+                            <a href="./sub02.html">직무소개</a>
                         </li>
                         <li>
                             <a href="#">인사제도</a>
@@ -167,7 +192,9 @@
             </div>
         </section>
         <nav class="location">
-            <img src="./assets/images/sub/location02.jpg" alt="">
+            <div class="location__inner">
+                <img src="./assets/images/sub/location02.jpg" alt="">
+            </div>
         </nav>
         <section class="visual">
             <img src="./assets/images/sub/sub03.jpg" alt="">
@@ -186,7 +213,12 @@
     </div>
     <!-- banner -->
     <aside class="banner banner--fit banner--sub">
-        <img src="./assets/images/sub/banner01.jpg" alt="">
+        <div class="banner__inner banner__inner--industrial">
+            <div class="banner__contents">
+                <img src="./assets/images/industrial-text.png" alt="">
+            </div>
+            <button type="button" class="btn-more btn-more--dark">See more</button>
+        </div>
     </aside>
     <!-- // -->
     <!-- footer -->
@@ -194,6 +226,45 @@
         <img src="./assets/images/footer.jpg" alt="">
     </footer>
     <!-- // -->
+
+    <script>
+        $(function() {
+            let isMove = false, currentIndex = 0, startY = 0, endY = 0;
+
+            $(window).scroll(function() {
+                // location
+                const $location = $('.location');
+                let scTop = $(this).scrollTop(), locationTop = $location.offset().top;
+
+                if (scTop >= locationTop - 140) {
+                    $location.addClass('fixed');
+                } else {
+                    $location.removeClass('fixed');
+                }
+            })
+
+            function handleWheel(e) {
+                if (!isMove) {
+                    if (e.originalEvent.deltaY > 0) {
+                        currentIndex++;
+                        if (currentIndex >= 3) {
+                            currentIndex = 3;
+                        }
+                    } else {
+                        currentIndex--;
+                        if (currentIndex <= 0) {
+                            currentIndex = 0;
+                        }
+                    }
+
+                    $('.slogan__content > li').eq(currentIndex).addClass('active').siblings().removeClass('active');
+                }
+                console.log(currentIndex);
+            }
+
+            $(window).bind('mousewheel', handleWheel);
+        })
+    </script>
 </div>
 </body>
 </html>
