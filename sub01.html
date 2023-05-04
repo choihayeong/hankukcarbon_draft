@@ -160,10 +160,10 @@
                     </ul>
                     <ul class="lnb__item">
                         <li>
-                            <a href="#">인재상</a>
+                            <a href="./sub02.html">인재상</a>
                         </li>
                         <li>
-                            <a href="./sub02.html">직무소개</a>
+                            <a href="#">직무소개</a>
                         </li>
                         <li>
                             <a href="#">인사제도</a>
@@ -225,35 +225,28 @@
 
             $(window).scroll(function() {
                 // location
-                const $location = $('.location');
-                let scTop = $(this).scrollTop(), locationTop = $location.offset().top;
+                const $location = $('.location'), $items = $('.slogan__content > li');
+                let scTop = $(this).scrollTop(), locationTop = $location.offset().top, itemsTop = [];
+
+                $items.each((index, ele) => {
+                    itemsTop.push(ele.offsetTop);
+                })
 
                 if (scTop >= locationTop - 140) {
                     $location.addClass('fixed');
                 } else {
                     $location.removeClass('fixed');
                 }
-            })
 
-            function handleWheel(e) {
-                if (!isMove) {
-                    if (e.originalEvent.deltaY > 0) {
-                        currentIndex++;
-                        if (currentIndex >= 3) {
-                            currentIndex = 3;
-                        }
-                    } else {
-                        currentIndex--;
-                        if (currentIndex <= 0) {
-                            currentIndex = 0;
-                        }
+                for (let i = 0; i < itemsTop.length; i++) {
+                    if (scTop >= itemsTop[i] - 370 && scTop < itemsTop[i+1] - 370) {
+                        $items.eq(i).addClass('active').siblings().removeClass('active');
                     }
-
-                    $('.slogan__content > li').eq(currentIndex).addClass('active').siblings().removeClass('active');
+                    if (scTop >= itemsTop[itemsTop.length - 1] - 370) {
+                        $items.eq(itemsTop.length - 1).addClass('active').siblings().removeClass('active');
+                    }
                 }
-            }
-
-            $(window).bind('mousewheel', handleWheel);
+            })
         })
     </script>
 </div>

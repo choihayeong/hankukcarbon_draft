@@ -5,18 +5,377 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="./assets/library/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="./assets/css/mobile.css">
+    <script src="./assets/library/jquery/jquery-3.6.3.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="./assets/library/swiper/swiper-bundle.min.js"></script>
 </head>
 <body class="mo">
     <div class="mobile">
         <div class="mobile__mockup"></div>
         <div class="mo-content">
             <div class="mobox" data-bg="default">
-                <div class="boxs">
-                    <img src="./assets/images/m/mobile.jpg" alt="">
+				<!-- HEADER -->
+				<div id="header" class="header">
+					<div class="header__inner">
+						<div class="logo">
+							<img src="./assets/images/m/logo.svg" alt="">
+						</div>
+						<div class="snb clearfix">
+                            <img src="./assets/images/m/snb.png" alt="">
+						</div>
+					</div>
+				</div>
+				<!-- // -->
+                <!-- VISUAL -->
+				<div class="main-visual">
+                    <div class="main-visual__bg">
+                        <div class="swiper-wrapper">
+                            <div class="main-visual__item swiper-slide" style="background-image:url(./assets/images/img01.jpg)">
+                                <div class="main-visual__contents">
+                                    <div class="main-visual__text">
+                                        <img src="./assets/images/m/text01.png" alt="">
+                                    </div>
+                                    <button type="button" class="btn-more">See more</button>
+                                </div>
+                            </div>
+                            <div class="main-visual__item swiper-slide" style="background-image:url(./assets/images/img01.jpg)">
+                                <div class="main-visual__contents">
+                                    HC Carbon
+                                </div>
+                            </div>
+                            <div class="main-visual__item swiper-slide" style="background-image:url(./assets/images/img01.jpg)">
+                                <div class="main-visual__contents">
+                                    HC Carbon
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-visual__indicator"></div>
+				</div>
+				<!-- // -->
+                <!-- BUSINESS -->
+                <div class="main-business">
+                    <div class="main-intro main-intro--business">
+                        <div class="main-intro__inner">
+                            <h2 class="main-intro__title">
+                                Business
+                            </h2>
+                            <ul class="main-intro__slogan">
+                                <li class="active" data-aos="focus">독창적인 기술력과 최고의 품질로</li>
+                                <li data-aos="focus">고객 비즈니스의 혁신을 주도하는</li>
+                                <li data-aos="focus" data-aos-offset="200">복합소재 전문기업, 한국카본</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="main-business__contents">
+                        <div class="main-business__thumbnail">
+                            <div class="row">
+                                <ul class="main-business__list">
+                                    <li>
+                                        <div class="main-business__item">
+                                            <img src="./assets/images/m/img01.png" alt="">
+                                        </div>
+                                        <div class="buttons">
+                                            <button type="button" class="btn">
+                                                <span>Transportation</span>
+                                            </button>
+                                            <button type="button" class="btn">
+                                                <span>Energy</span>
+                                            </button>
+                                            <button type="button" class="btn">
+                                                <span>Ship</span>
+                                            </button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="main-business__item">
+                                            <img src="./assets/images/m/img02.png" alt="">
+                                        </div>
+                                        <div class="buttons" style="padding:0 20px">
+                                            <button type="button" class="btn">
+                                                <span>Aerospace</span>
+                                            </button>
+                                            <button type="button" class="btn">
+                                                <span>Construction(BD)</span>
+                                            </button>
+                                            <button type="button" class="btn">
+                                                <span>Infra</span>
+                                            </button>
+                                            <button type="button" class="btn">
+                                                <span>Semiconductor</span>
+                                            </button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="main-business__item">
+                                            <img src="./assets/images/m/img04.png" alt="">
+                                        </div>
+                                        <div class="buttons">
+                                            <button type="button" class="btn">
+                                                <span>Sports & Leisure</span>
+                                            </button>
+                                            <button type="button" class="btn">
+                                                <span>Consumer Electronics</span>
+                                            </button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <!-- // -->
+                <!-- ESG -->
+                <section class="main-esg">
+                    <div class="main-esg__contents" data-aos="fade-up">
+                        <img src="./assets/images/m/esg-text.png" alt="">
+                    </div>
+                    <button type="button" class="btn-more">See more</button>
+                </section>
+                <!-- // -->
+                <!-- COMPANY -->
+                <div class="main-company">
+                    <div class="main-intro main-intro--company">
+                        <div class="main-intro__inner">
+                            <h2 class="main-intro__title">
+                                COMPANY
+                            </h2>
+                            <ul class="main-intro__slogan">
+                                <li class="active" data-aos="focus">독창적인 기술력과 최고의 품질로</li>
+                                <li data-aos="focus">고객 비즈니스의 혁신을 주도하는</li>
+                                <li data-aos="focus" data-aos-offset="200">복합소재 전문기업, 한국카본</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <ul class="main-company__list">
+                            <li>
+                                <div class="main-company__counter">
+                                    <div class="main-company__number" data-aos="split">
+                                        <strong class="char">39</strong>
+                                    </div>
+                                    <div class="main-company__contents" data-aos="fade">
+                                        <img src="./assets/images/m/text03.png" alt="">
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="main-company__counter">
+                                    <div class="main-company__number" data-aos="split">
+                                        <strong class="char">4,700</strong>
+                                    </div>
+                                    <div class="main-company__contents" data-aos="fade">
+                                        <img src="./assets/images/m/text04.png" alt="">
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="main-company__counter">
+                                    <div class="main-company__number" data-aos="split">
+                                        <strong class="char">1</strong>
+                                    </div>
+                                    <div class="main-company__contents" data-aos="fade">
+                                        <img src="./assets/images/m/text05.png" alt="">
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="main-company__counter">
+                                    <div class="main-company__number" data-aos="split">
+                                        <strong class="char">75</strong>
+                                    </div>
+                                    <div class="main-company__contents" data-aos="fade">
+                                        <img src="./assets/images/m/text06.png" alt="">
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- // -->
+                <!-- RND -->
+                <div class="main-rnd">
+                    <div class="main-intro">
+                        <div class="main-intro__inner">
+                            <h2 class="main-intro__title">
+                                R&D
+                            </h2>
+                            <ul class="main-intro__slogan">
+                                <li class="active" data-aos="focus">한계를 뛰어넘는 도전으로</li>
+                                <li data-aos="focus" data-aos-offset="200">새로운 기술과 가치를 창조합니다</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="main-rnd__list">
+                            <img src="./assets/images/m/rnd.png" alt="">
+                        </div>
+                    </div>
+                    <aside class="main-rnd__banner">
+                        <div class="stroke">
+                            <div class="stroke__inner">
+                                <span class="stroke__line">LET’S BUILD</span>
+                                <span class="stroke__fill">
+                                    <span class="stroke__fill-inner">LET’S BUILD</span>
+                                </span>
+                            </div>
+                            <div class="stroke__inner">
+                                <span class="stroke__line">SOMETHING</span>
+                                <span class="stroke__fill">
+                                    <span class="stroke__fill-inner">SOMETHING</span>
+                                </span>
+                            </div>
+                            <div class="stroke__inner">
+                                <span class="stroke__line">AMAZING</span>
+                                <span class="stroke__fill">
+                                    <span class="stroke__fill-inner">AMAZING</span>
+                                </span>
+                            </div>
+                            <div class="stroke__inner">
+                                <span class="stroke__line">TOGETHER</span>
+                                <span class="stroke__fill">
+                                    <span class="stroke__fill-inner">TOGETHER</span>
+                                </span>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+                <!-- // -->
+                <!-- RECRUIT -->
+                <div class="main-recruit">
+                    <div class="main-intro">
+                        <div class="main-intro__inner">
+                            <h2 class="main-intro__title">
+                                HC People
+                            </h2>
+                            <ul class="main-intro__slogan">
+                                <li class="active" data-aos="focus">꿈과 열정으로 소재를 창조하는</li>
+                                <li data-aos="focus" data-aos-offset="200">인재를 기다립니다</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./assets/images/m/recruit.png" alt="">
+                    </div>
+                </div>
+                <!-- // -->
+                <!-- BANNER -->
+                <aside class="banner banner--main">
+                    <span class="banner__object">
+                        <img src="./assets/images/object.png" alt="">
+                    </span>
+                    <div class="banner__inner banner__inner--aero">
+                        <div class="banner__contents" data-aos="fade-up">
+                            <img src="./assets/images/m/text02.png" alt="">
+                        </div>
+                        <button type="button" class="btn-more">See more</button>
+                    </div>
+                </aside>
+                <!-- // -->
+                <!-- FOOTER -->
+                <footer>
+                    <img src="./assets/images/m/footer.jpg" alt="">
+                </footer>
+                <!-- // -->
             </div>
         </div>
     </div>
+    <script>
+        AOS.init({
+            duration: 1000,
+            offset: 0,
+        });
+        $(function () {
+            $(window).on('load', function () {
+                AOS.refresh();
+            });
+            // kvSwiper
+            const kvSwiper = new Swiper('.main-visual__bg', {
+                effect:'fade',
+                loop:true,
+                pagination: {
+                    el: '.main-visual__indicator',
+                },
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false
+                },
+                on : {
+                    slideChange: function () {
+                        var activeIndex = this.activeIndex,
+                            realIndex = this.slides[activeIndex].getAttribute('data-swiper-slide-index');
+                        $('.main-visual__indicator > span').removeClass("active");
+                        $('.main-visual__indicator > span').eq(realIndex).addClass("active");
+                    },
+                    init: function() {
+                        setTimeout(function() {
+                            $('.main-visual__indicator > span').eq(0).addClass('active');
+                        }, 100)
+                    }
+                },
+            })
+            kvSwiper.autoplay.stop();
+            setTimeout(function() {
+                kvSwiper.autoplay.start();
+            }, 100)
+
+            for (var i = 0; i < $('.main-company__number strong').length; i++) {
+                let numberText = $('.main-company__number strong').eq(i).text();
+                numberText = numberText.split('').map((item, index) => {
+                    item = `<span class="char__inner">
+                        <span class="char__box">${item}</span>
+                    </span>`;
+
+                    return item;
+                });
+                $('.main-company__number strong').eq(i).html(numberText);
+            }
+
+            $('.mo-content').scroll(function () {
+                AOS.init({
+                    duration: 1000,
+                    once: true,
+                    offset: 0,
+                });
+
+                // section slogan effect (mixed with AOS)
+                $('[data-aos="focus"].aos-animate').each((index, item) => {
+                    let current = $('[data-aos="focus"].aos-animate').length;
+
+                    if (index === current - 1) {
+                        let currentFocus = $($('[data-aos="focus"].aos-animate')[index]);
+
+                        currentFocus.addClass('active').siblings().removeClass('active');
+                    }
+                })
+    
+                let scrollTop = $('.mo-content').scrollTop(),
+                    conTop = $('.mo-content').offset().top;
+    
+                if((scrollTop > conTop + 1960) && (scrollTop < conTop + 2655)){
+                    $('.mobox').attr('data-bg', 'blue');
+                } else { 
+                    $('.mobox').attr('data-bg', 'default');
+                }
+    
+                if (scrollTop > 0) {
+                    $('#header').addClass('on');
+                } else {
+                    $('#header').removeClass('on');
+                }
+    
+                if (top > 1){
+                    $('#header').addClass('active');
+                    $('.boxs').addClass('on');
+                } else {
+                    $('#header').removeClass('active');
+                    $('.boxs').removeClass('on');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -6,77 +6,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        * {margin: 0;padding: 0;border: 0}
-        body {background:#101111;}
-
-        .wrap {overflow:hidden}
-        .box {
-            position: absolute;
-            right:0;
-            /* margin: 10px 5px; */
-            width: 800px;
-            height: 800px;
-            border-radius: 50%;
-            background: #00FFA8;
-            border-top: 3px dotted #00FFA8;
-            border-right: 1.5px dotted #00FFA8;
-            border-bottom: 3px dotted #00FFA8;
-            border-left: 15px dotted #00FFA8;
-            -webkit-animation: spin 3s linear infinite;
-            -webkit-filter: blur(5px);
-            animation: spin 3s linear infinite;
-            filter: blur(150px);
-            opacity:0.15;
+        :root {
+            --color-background:#101111;
+            --color-design:#00FFA8;
+            --color-research:#00FFA8;
+            --radius:400px;
         }
 
-        @-webkit-keyframes spin {
-            0% {
-                border-top: 3px dotted #00FFA8;
-                border-right: 1.5px dotted #00FFA8;
-                border-bottom: 3px dotted #00FFA8;
-                border-left: 15px dotted #00FFA8;
-                /* -webkit-filter: blur(5px); */
-                -webkit-transform: scale(1) rotateZ(0deg);
-            }
-            25% {
-                border-top-left-radius: 48%;
-                border-top-right-radius: 45%;
-                border-bottom-left-radius: 45%;
-                border-bottom-right-radius: 48%;
-                -webkit-transform: scale(0.95);
-                /* -webkit-filter: blur(6px); */
-            }
-            50% {
-                border-top: 1.5px dotted #00FFA8;
-                border-right: 15px dotted #00FFA8;
-                border-bottom: 1.5px dotted #00FFA8;
-                border-left: 1.5px dotted #00FFA8;
-                border-top-left-radius: 45%;
-                border-top-right-radius: 48%;
-                border-bottom-left-radius: 48%;
-                border-bottom-right-radius: 45%;
-                -webkit-transform: scale(2);
-                /* -webkit-filter: blur(7px); */
-            }
-            100% {
-                border-top: 3px dotted #00FFA8;
-                border-right: 1.5px dotted #00FFA8;
-                border-bottom: 3px dotted #00FFA8;
-                border-left: 15px dotted #00FFA8;
-                /* -webkit-filter: blur(5px); */
-                -webkit-transform: scale(1.5) rotateZ(180deg);
-            }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        .canvas {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .canvas {
+            background: var(--color-background);
+        }
+
+        .circles {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation-name: rotate;
+            animation-duration: 25s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            backface-visibility: hidden;
+            perspective: 1000;
+        }
+
+        .circle {
+            position: relative;
+            width: 1px;
+            height: 1px;
+            margin: calc( var(--radius) / 2 );
+            border-radius: 50%;
+            backface-visibility: hidden;
+            perspective: 1000;
+            opacity: .9;
+        }
+
+        .circle.design {
+            background: var(--color-design);
+            box-shadow: 0 0 var(--radius) var(--radius) var(--color-design);
+            animation-name: float;
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        .circle.research {
+            background: var(--color-research);
+            box-shadow: 0 0 var(--radius) var(--radius) var(--color-research);
+            animation-name: float;
+            animation-duration: 8s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+        }
+
+        @keyframes float {
+            0%   { transform: translateX( calc( var(--radius) * 0.0 ) ) translateZ( 0 ) }
+            20%  { transform: translateX( calc( var(--radius) * 0.5 ) ) translateZ( 0 ) }
+            40%  { transform: translateX( calc( var(--radius) * 1.0 ) ) translateZ( 0 ) }
+            60%  { transform: translateX( calc( var(--radius) * 1.5 ) ) translateZ( 0 ) }
+            80%  { transform: translateX( calc( var(--radius) * 0.5 ) ) translateZ( 0 ) }
+            100% { transform: translateX( calc( var(--radius) * 0.0 ) ) translateZ( 0 ) }
+        }
+
+        @keyframes rotate {
+            0%   { transform: rotate( 0deg )   translateZ( 0 ) }
+            100% { transform: rotate( 360deg ) translateZ( 0 ) }
         }
 
 
     </style>
 </head>
 <body>
-    <div class="wrap">
-        <div class='box spin'></div>
+    <div class="canvas">
+        <div class="circles">
+            <div class="circle research"></div>
+            <div class="circle design"></div>
+        </div>
+        <!-- <div class="overlay"></div> -->
     </div>
 
-    <script>
+    <!-- <script>
         var base_w = window.innerWidth / 2;
         var base_h = window.innerWidth / 2;
 
@@ -85,6 +117,6 @@
 
         $(".box").css("top",20);
         $(".box").css("left",base_h - h/2);
-    </script>
+    </script> -->
 </body>
 </html>

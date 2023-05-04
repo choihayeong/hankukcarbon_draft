@@ -82,13 +82,13 @@ $(function() {
         })
 
         for (var i = 0; i < itemsTop.length; i++) {
-            if (scTop >= itemsTop[i] && scTop < itemsTop[i+1]) {
+            if (scTop >= itemsTop[i] + 120 && scTop < itemsTop[i+1] + 120) {
                 $items.eq(i).addClass('active').siblings().removeClass('active');
                 $overlayTitles.eq(i).addClass('active').siblings().removeClass('active');
                 $overlayRoles.eq(i).addClass('active').siblings().removeClass('active');
                 $overlayButtons.eq(i).addClass('active').siblings().removeClass('active');
             }
-            if (scTop >= itemsTop[itemsTop.length - 1]) {
+            if (scTop >= itemsTop[itemsTop.length - 1] + 120) {
                 $items.eq(itemsTop.length - 1).addClass('active').siblings().removeClass('active');
                 $overlayTitles.eq(itemsTop.length - 1).addClass('active').siblings().removeClass('active');
                 $overlayRoles.eq(itemsTop.length - 1).addClass('active').siblings().removeClass('active');

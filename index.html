@@ -17,7 +17,7 @@
     <script src="./assets/script/main.js"></script>
 </head>
 <body>
-    <div class="wrap">
+    <div class="wrap" data-scroll-container>
         <!-- header -->
         <header id="header" class="header">
             <div class="header__wrap">
@@ -161,10 +161,10 @@
                         </ul>
                         <ul class="lnb__item">
                             <li>
-                                <a href="#">인재상</a>
+                                <a href="./sub02.html">인재상</a>
                             </li>
                             <li>
-                                <a href="./sub02.html">직무소개</a>
+                                <a href="#">직무소개</a>
                             </li>
                             <li>
                                 <a href="#">인사제도</a>
@@ -211,9 +211,11 @@
                 </section>
                 <!-- section#02 -->
                 <section class="section main-business">
-                    <div class="circle circle--01"></div>
-                    <div class="circle circle--02"></div>
-                    <div class="circle circle--03"></div>
+                    <div class="circlewrap">
+                        <div class="circle circle--01"></div>
+                        <div class="circle circle--02"></div>
+                        <div class="circle circle--03"></div>
+                    </div>
                     <div class="main-intro main-intro--business">
                         <div class="main-intro__inner">
                             <h2 class="main-intro__title">
@@ -308,8 +310,10 @@
                 </section>
                 <!-- section#04 -->
                 <section class="section main-company">
-                    <div class="circle circle--04"></div>
-                    <div class="circle circle--05"></div>
+                    <div class="circlewrap">
+                        <div class="circle circle--04"></div>
+                        <div class="circle circle--05"></div>
+                    </div>
                     <div class="main-intro main-intro--company">
                         <div class="main-intro__inner">
                             <h2 class="main-intro__title">
@@ -326,40 +330,40 @@
                         <ul class="main-company__list">
                             <li>
                                 <div class="main-company__counter">
-                                    <div class="main-company__number" data-aos="split">
+                                    <div class="main-company__number" data-aos="split" data-aos-offset="400">
                                         <strong class="char">39</strong>
                                     </div>
-                                    <div class="main-company__contents">
+                                    <div class="main-company__contents" data-aos="fade" data-aos-offset="400">
                                         <img src="./assets/images/text03.png" alt="">
                                     </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="main-company__counter">
-                                    <div class="main-company__number" data-aos="split">
+                                    <div class="main-company__number" data-aos="split" data-aos-offset="400">
                                         <strong class="char">4,700</strong>
                                     </div>
-                                    <div class="main-company__contents">
+                                    <div class="main-company__contents" data-aos="fade" data-aos-offset="400">
                                         <img src="./assets/images/text04.png" alt="">
                                     </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="main-company__counter">
-                                    <div class="main-company__number" data-aos="split">
+                                    <div class="main-company__number" data-aos="split" data-aos-offset="200">
                                         <strong class="char">1</strong>
                                     </div>
-                                    <div class="main-company__contents">
+                                    <div class="main-company__contents" data-aos="fade" data-aos-offset="400">
                                         <img src="./assets/images/text05.png" alt="">
                                     </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="main-company__counter">
-                                    <div class="main-company__number" data-aos="split">
+                                    <div class="main-company__number" data-aos="split" data-aos-offset="200">
                                         <strong class="char">75</strong>
                                     </div>
-                                    <div class="main-company__contents">
+                                    <div class="main-company__contents" data-aos="fade" data-aos-offset="400">
                                         <img src="./assets/images/text06.png" alt="">
                                     </div>
                                 </div>
@@ -369,7 +373,10 @@
                 </section>
                 <!-- section#05 -->
                 <section class="section main-rnd">
-                    <div class="circle circle--06"></div>
+                    <div class="circlewrap">
+                        <div class="circle circle--06"></div>
+                    </div>
+                    
                     <div class="main-intro">
                         <div class="main-intro__inner">
                             <h2 class="main-intro__title">
@@ -440,7 +447,10 @@
                 </section>
                 <!-- section#06 -->
                 <section class="section main-recruit">
-                    <div class="circle circle--07"></div>
+                    <div class="circlewrap">
+                        <div class="circle circle--07"></div>
+                    </div>
+                    
                     <div class="main-intro">
                         <div class="main-intro__inner">
                             <h2 class="main-intro__title">
@@ -482,5 +492,6 @@
         </footer>
         <!-- // -->
     </div>
+
 </body>
 </html>
