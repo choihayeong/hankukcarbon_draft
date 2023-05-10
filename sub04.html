@@ -16,7 +16,7 @@
 <body>
 <div class="wrap">
     <!-- header -->
-    <header id="header" class="header on">
+    <header id="header" class="header header--sub on">
         <div class="header__wrap">
             <div class="header__top">
                 <img src="./assets/images/header_top-menu.png" alt="">
@@ -188,6 +188,9 @@
                     <li>이끌어갈 인재를 찾습니다</li>
                 </ul>
             </div>
+            <div class="slogan__video">
+                <video src="./assets/images/sub/video.mp4" autoplay muted loop playsinline></video>
+            </div>
         </section>
         <nav class="location">
             <div class="location__inner">
@@ -195,7 +198,9 @@
             </div>
         </nav>
         <section class="visual">
-            <img src="./assets/images/sub/sub03.jpg" alt="">
+            <div class="visual__inner visual__inner--fit">
+                <img src="./assets/images/sub/sub03.jpg" alt="">
+            </div>
         </section>
         <section class="content">
             <div class="row">
@@ -218,6 +223,7 @@
     <script>
         $(function() {
             let isMove = false, currentIndex = 0, startY = 0, endY = 0;
+            const $header = $('#header');
 
             $(window).scroll(function() {
                 // location
@@ -228,17 +234,17 @@
                     itemsTop.push(ele.offsetTop);
                 })
 
-                if (scTop >= locationTop - 140) {
+                if (scTop >= locationTop) {
                     $location.addClass('fixed');
                 } else {
                     $location.removeClass('fixed');
                 }
 
                 for (let i = 0; i < itemsTop.length; i++) {
-                    if (scTop >= itemsTop[i] - 370 && scTop < itemsTop[i+1] - 370) {
+                    if (scTop >= itemsTop[i] - 440 && scTop < itemsTop[i+1] - 440) {
                         $items.eq(i).addClass('active').siblings().removeClass('active');
                     }
-                    if (scTop >= itemsTop[itemsTop.length - 1] - 370) {
+                    if (scTop >= itemsTop[itemsTop.length - 1] - 440) {
                         $items.eq(itemsTop.length - 1).addClass('active').siblings().removeClass('active');
                     }
                 }

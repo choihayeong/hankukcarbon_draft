@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background:#121314;
+        }
+        .neon-circle {
+            position:absolute;
+            top:210px;
+            left:389px;
+            width:108px;
+            height:108px;
+            border-radius:50%;
+        }
+        .neon-circle::before, .neon-circle::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: 50%;
+            left: 50%;
+            margin-top: -5px;
+            margin-left: -5px;
+            border-radius: 50%;
+            background: #0060AF;
+        }
+        .neon-circle::after {
+            animation:scale 2.4s linear infinite;
+        }
+        .neon-circle__inner {
+            position:relative;
+            width:100%;
+            height:100%;
+            border-radius:50%;
+            background: radial-gradient(50% 50% at 50% 50%, #008CFF 7.58%, #D6E0E9 7.71%, #9EA6AD 20.43%, #71777C 37.04%, #4D5256 47.55%, #2C2F32 61.11%, #181A1C 71.34%, #0E0F10 81.58%, #030303 90.75%, #000000 100%);
+            background-blend-mode: color-dodge;
+            mix-blend-mode: color-dodge;
+        }
+        .neon-circle__inner::before {
+            content:'';
+            position:absolute;
+            top:50%;
+            left:50%;
+            width:14px;
+            height:14px;
+            margin-top:-7px;
+            margin-left:-7px;
+            border-radius:50%;
+            background: #0060AF;
+            mix-blend-mode: hue;
+
+        }
+        @keyframes scale {
+            0% {
+                opacity:0.5;
+                transform:scale(1);
+            }
+            100% {
+                opacity:0.2;
+                transform:scale(2.2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <img src="./assets/images/sub/map.png" alt="">
+        <div class="neon-circle">
+            <div class="neon-circle__inner"></div>
+        </div>
+    </div>
+</body>
+</html>
