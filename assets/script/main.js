@@ -75,25 +75,36 @@ $(function() {
             $overlayTitles = $('.overlay__title'),
             $overlayRoles = $('.overlay__role'),
             $overlayButtons = $('.overlay__buttons > .buttons'),
-            itemsTop = [];
+            itemsTop = [],
+            itemsHeight = []
 
         $items.each((index, ele) => {
             itemsTop.push(ele.offsetTop + overlayTop - wh);
         })
+        $items.each((index, ele) => {
+            itemsHeight.push(ele.offsetHeight);
+        })
 
         for (var i = 0; i < itemsTop.length; i++) {
-            if (scTop >= itemsTop[i] + 120 && scTop < itemsTop[i+1] + 120) {
+            if (scTop >= itemsTop[i] + (itemsHeight[i]) + 100 && scTop < itemsTop[i+1] + (itemsHeight[i]) + 100) {
                 $items.eq(i).addClass('active').siblings().removeClass('active');
                 $overlayTitles.eq(i).addClass('active').siblings().removeClass('active');
                 $overlayRoles.eq(i).addClass('active').siblings().removeClass('active');
                 $overlayButtons.eq(i).addClass('active').siblings().removeClass('active');
             }
-            if (scTop >= itemsTop[itemsTop.length - 1] + 120) {
+            if (scTop >= itemsTop[itemsTop.length - 1] + (itemsHeight[i]) + 100) {
                 $items.eq(itemsTop.length - 1).addClass('active').siblings().removeClass('active');
                 $overlayTitles.eq(itemsTop.length - 1).addClass('active').siblings().removeClass('active');
                 $overlayRoles.eq(itemsTop.length - 1).addClass('active').siblings().removeClass('active');
                 $overlayButtons.eq(itemsTop.length - 1).addClass('active').siblings().removeClass('active');
             }
+
+        }
+        if (scTop < itemsTop[0] + (itemsHeight[0]) + 100) {
+            $items.eq(0).removeClass('active').siblings().removeClass('active');
+            $overlayTitles.eq(0).removeClass('active').siblings().removeClass('active');
+            $overlayRoles.eq(0).removeClass('active').siblings().removeClass('active');
+            $overlayButtons.eq(0).removeClass('active').siblings().removeClass('active');
         }
     })
 

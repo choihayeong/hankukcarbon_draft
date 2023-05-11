@@ -16,7 +16,7 @@
     <div class="mobile">
         <div class="mobile__mockup"></div>
         <div class="mo-content">
-            <div class="mobox" data-bg="default">
+            <div class="mobox">
 				<!-- HEADER -->
 				<div id="header" class="header">
 					<div class="header__inner">
@@ -36,19 +36,48 @@
                             <div class="main-visual__item swiper-slide" style="background-image:url(./assets/images/img01.jpg)">
                                 <div class="main-visual__contents">
                                     <div class="main-visual__text">
-                                        <img src="./assets/images/m/text01.png" alt="">
+                                        세계 최대 <br>
+                                        복합소재 전시회 <br>
+                                        <span style="font-family:'Roboto Condensed'">JEC World 2023</span>
+                                    </div>
+                                    <div class="main-visual__description">
+                                        프랑스 파리 노르 빌팽트 전시장에서 <br>
+                                        지속가능한 미래라는 주제로 <br>
+                                        4월25~27일 개최되며 <br>
+                                        한국카본도 참가 합니다
+                                    </div>
+                                    <button type="button" class="btn-more">See more</button>
+                                </div>
+                            </div>
+                            <div class="main-visual__item swiper-slide" style="background-image:url(./assets/images/img08.jpg)">
+                                <div class="main-visual__contents">
+                                    <div class="main-visual__text">
+                                        LNG선 화물창용 <br>
+                                        친환경 초저온<br>
+                                        보냉자재 <br>
+                                        ‘GTT’승인 획득
+                                    </div>
+                                    <div class="main-visual__description">
+                                        한국카본은 친환경 ‘LOW BOR’ <br>
+                                        초저온 보냉자재의 생산능력을 확보
                                     </div>
                                     <button type="button" class="btn-more">See more</button>
                                 </div>
                             </div>
                             <div class="main-visual__item swiper-slide" style="background-image:url(./assets/images/img01.jpg)">
                                 <div class="main-visual__contents">
-                                    HC Carbon
-                                </div>
-                            </div>
-                            <div class="main-visual__item swiper-slide" style="background-image:url(./assets/images/img01.jpg)">
-                                <div class="main-visual__contents">
-                                    HC Carbon
+                                    <div class="main-visual__text">
+                                        세계 최대 <br>
+                                        복합소재 전시회 <br>
+                                        <span style="font-family:'Roboto Condensed'">JEC World 2023</span>
+                                    </div>
+                                    <div class="main-visual__description">
+                                        프랑스 파리 노르 빌팽트 전시장에서 <br>
+                                        지속가능한 미래라는 주제로 <br>
+                                        4월25~27일 개최되며 <br>
+                                        한국카본도 참가 합니다
+                                    </div>
+                                    <button type="button" class="btn-more">See more</button>
                                 </div>
                             </div>
                         </div>
@@ -80,13 +109,16 @@
                                         </div>
                                         <div class="buttons">
                                             <button type="button" class="btn">
-                                                <span>Transportation</span>
+                                                <span class="btn__default">Transportation</span>
+                                                <span class="btn__hover">Transportation</span>
                                             </button>
                                             <button type="button" class="btn">
-                                                <span>Energy</span>
+                                                <span class="btn__default">Energy</span>
+                                                <span class="btn__hover">Energy</span>
                                             </button>
                                             <button type="button" class="btn">
-                                                <span>Ship</span>
+                                                <span class="btn__default">Ship</span>
+                                                <span class="btn__hover">Ship</span>
                                             </button>
                                         </div>
                                     </li>
@@ -96,16 +128,20 @@
                                         </div>
                                         <div class="buttons" style="padding:0 20px">
                                             <button type="button" class="btn">
-                                                <span>Aerospace</span>
+                                                <span class="btn__default">Aerospace</span>
+                                                <span class="btn__hover">Aerospace</span>
                                             </button>
                                             <button type="button" class="btn">
-                                                <span>Construction(BD)</span>
+                                                <span class="btn__default">Construction(BD)</span>
+                                                <span class="btn__hover">Construction(BD)</span>
                                             </button>
                                             <button type="button" class="btn">
-                                                <span>Infra</span>
+                                                <span class="btn__default">Infra</span>
+                                                <span class="btn__hover">Infra</span>
                                             </button>
                                             <button type="button" class="btn">
-                                                <span>Semiconductor</span>
+                                                <span class="btn__default">Semiconductor</span>
+                                                <span class="btn__hover">Semiconductor</span>
                                             </button>
                                         </div>
                                     </li>
@@ -115,10 +151,12 @@
                                         </div>
                                         <div class="buttons">
                                             <button type="button" class="btn">
-                                                <span>Sports & Leisure</span>
+                                                <span class="btn__default">Sports & Leisure</span>
+                                                <span class="btn__hover">Sports & Leisure</span>
                                             </button>
                                             <button type="button" class="btn">
-                                                <span>Consumer Electronics</span>
+                                                <span class="btn__default">Consumer Electronics</span>
+                                                <span class="btn__hover">Consumer Electronics</span>
                                             </button>
                                         </div>
                                     </li>
@@ -273,6 +311,9 @@
                         </div>
                         <button type="button" class="btn-more">See more</button>
                     </div>
+                    <button type="button" class="btn-top">
+                        <span class="blind">Top</span>
+                    </button>
                 </aside>
                 <!-- // -->
                 <!-- FOOTER -->
@@ -375,6 +416,11 @@
                     $('.boxs').removeClass('on');
                 }
             });
+            function topClickEvent() {
+                $('.mo-content').stop().animate({scrollTop:0}, 800, "linear");
+                return false;
+            }
+            $('.btn-top').on('click', topClickEvent);
         });
     </script>
 </body>

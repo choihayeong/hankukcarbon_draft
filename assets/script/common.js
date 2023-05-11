@@ -37,4 +37,9 @@ $(function() {
         $(this).toggleClass('active');
         $(this).siblings('.snb__list').slideToggle();
     })
+    /* FOOTER */
+    $('.btn-top').on('click', function() {
+        $('html, body').animate({scrollTop:0}, 1000, "linear").delay(1500);
+        return false;
+    });
 })
