@@ -121,7 +121,7 @@ body {font-family:'Spoqa Han Sans Neo',sans-serif;font-size:0}
 [data-aos="fade"] {opacity:0}
 [data-aos="fade"].aos-animate {opacity:1}
 [data-aos="split"].aos-animate .char__box {transform:translateY(0%)}
-[data-aos="split"].aos-init::before {left:87px;width:0;transition:all 0.4s ease-out}
+[data-aos="split"].aos-init::before {left:0;width:0;transition:all 0.4s ease-out}
 [data-aos="split"].aos-animate::before {left:0;width:175px}
 
 /* animation */
