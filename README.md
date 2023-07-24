@@ -1,2 +1,4 @@
 # hankukcarbon_draft
-hankukcarbon_draft type A
+- 한국카본 (type A) 시안 작업
+- 작업기간 : 2023.04.25 ~ 2023.05.12 (14 days)
+- 디자이너 1명, 퍼블리셔 1명 (소속: 비닷크리에이티브)
